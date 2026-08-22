@@ -10,6 +10,8 @@
 * escalation, and failure is logged and retained.
 */
 import type { RunResult } from "../types";
+import { mkdir, writeFile } from "node:fs/promises";
+import { resolve } from "node:path";
 export interface AuditRecord {
 schema_version: "1.0.0";
 run_id: string;
@@ -66,11 +68,14 @@ methodology: "ARCHITEK N ADVOCACY™",
 orcid: "0009-0005-5311-1358",
 recorded_at: new Date().toISOString(),
 };
-// Write to console in structured format during development
-console.log("[AUDIT]", JSON.stringify(record, null, 2));
-// In simulator environment, also persist to Supabase sim.runs and sim.scorecards
-// This is handled by the API layer when connected to the sim Supabase project
-// See: src/api/persistRun.ts
+const outputDirectory = resolve(process.cwd(), "reports", "output");
+await mkdir(outputDirectory, { recursive: true });
+await writeFile(
+resolve(outputDirectory, `${result.runId}.audit.json`),
+`${JSON.stringify(record, null, 2)}\n`,
+{ encoding: "utf8", flag: "wx" }
+);
+console.log(`[AUDIT] Wrote reports/output/${result.runId}.audit.json`);
 }
 /**
 * Returns a human-readable audit summary for export / review queue
@@ -110,5 +115,4 @@ const lines = [
 ];
 return lines.join("\n");
 }
-
 

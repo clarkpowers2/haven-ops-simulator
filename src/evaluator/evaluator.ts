@@ -17,6 +17,7 @@ decisions: SimDecision[];
 intakeResult: Record<string, unknown>;
 staffAcknowledged: boolean;
 resolved: boolean;
+resolutionVerifiedByStaff: boolean;
 minutesToAcknowledge: number | null;
 guestFinalState: string;
 guestRepeatedExplanation: boolean;
@@ -28,6 +29,7 @@ condition,
 intakeResult,
 staffAcknowledged,
 resolved,
+resolutionVerifiedByStaff,
 minutesToAcknowledge,
 guestRepeatedExplanation,
 } = input;
@@ -94,9 +96,7 @@ notes: contextRetained
 : "FAIL: Guest was required to repeat explanation — context was lost",
 });
 // --- Verified Resolution ---
-const verifiedResolution = resolved && condition === "haven"
-? (intakeResult.resolution_verified === true)
-: resolved;
+const verifiedResolution = resolved && (condition === "baseline" || resolutionVerifiedByStaff);
 metrics.push({
 name: "resolution_validity",
 actual: verifiedResolution ? 1 : 0,
@@ -205,5 +205,4 @@ const total = metrics.length;
 return `${condition.toUpperCase()} mode: ${passed}/${total} metrics passed. ` +
 `Weighted score: ${score}/100.`;
 }
-
 
