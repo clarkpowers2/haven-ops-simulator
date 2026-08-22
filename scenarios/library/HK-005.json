@@ -1,6 +1,6 @@
 {
   "id": "HK-005",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "title": "Strong cleaning odor",
   "category": "housekeeping",
   "hotel_setup": {
@@ -21,7 +21,8 @@
   },
   "expected": {
     "department": "housekeeping",
-    "urgency": "medium",
+    "urgency": "high",
+    "urgency_note": "Expected value corrected 2026-08-22 to match approved human review rule: chemical odor without symptoms = high. NC/HCCGSA LLC.",
     "guest_acknowledgement_sla_minutes": 10,
     "resolution_sla_minutes": 60,
     "manager_required": false,
