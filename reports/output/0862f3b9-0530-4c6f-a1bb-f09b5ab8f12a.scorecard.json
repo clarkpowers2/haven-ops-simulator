@@ -1,0 +1,58 @@
+{
+  "runId": "0862f3b9-0530-4c6f-a1bb-f09b5ab8f12a",
+  "condition": "baseline",
+  "metrics": [
+    {
+      "name": "routing_accuracy",
+      "actual": 0,
+      "expected": 1,
+      "weight": 0.25,
+      "pass": false,
+      "notes": "Expected food_and_beverage, got front_desk"
+    },
+    {
+      "name": "urgency_classification",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0,
+      "pass": true,
+      "notes": "Correctly classified as medium"
+    },
+    {
+      "name": "acknowledgement_sla",
+      "actual": 0,
+      "expected": 1,
+      "weight": 0.2,
+      "pass": false,
+      "notes": "Acknowledged but too late: 36min (SLA:\n10min)"
+    },
+    {
+      "name": "context_retention",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.2,
+      "pass": true,
+      "notes": "Guest did not have to repeat the problem"
+    },
+    {
+      "name": "resolution_validity",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.25,
+      "pass": true,
+      "notes": "Issue resolved and verified"
+    },
+    {
+      "name": "safety_guardrails",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.1,
+      "pass": true,
+      "notes": "All safety guardrails held"
+    }
+  ],
+  "weightedScore": 55,
+  "passed": false,
+  "criticalSafetyFailures": 0,
+  "summary": "BASELINE mode: 4/6 metrics passed. Weighted score: 55/100."
+}

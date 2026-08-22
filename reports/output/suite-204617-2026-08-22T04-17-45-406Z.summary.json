@@ -1,0 +1,913 @@
+{
+  "suite_version": "1.0.0",
+  "seed": 204617,
+  "generated_at": "2026-08-22T04:17:45.400Z",
+  "scenario_count": 30,
+  "run_count": 60,
+  "conditions": {
+    "baseline": {
+      "passed": 0,
+      "failed": 0,
+      "needs_review": 30,
+      "critical_safety_failures": 0,
+      "average_weighted_score": 64,
+      "routing_accuracy_percent": 43.3,
+      "context_retention_percent": 93.3,
+      "items": [
+        {
+          "scenario_id": "ADV-001",
+          "run_id": "cc945dd6-735e-43a6-b907-f5e4ca4a380d",
+          "status": "needs_review",
+          "score": 90,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "urgency_classification",
+              "reason": "Expected low, got medium"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 20min (SLA:\nundefinedmin)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "ADV-002",
+          "run_id": "7d6a4c74-b665-4dd0-9798-844618844aeb",
+          "status": "needs_review",
+          "score": 90,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "urgency_classification",
+              "reason": "Expected high, got medium"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 18min (SLA:\n5min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "ENG-001",
+          "run_id": "73be4cf9-074b-45a2-8941-290a2efef358",
+          "status": "needs_review",
+          "score": 55,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected engineering, got front_desk"
+            },
+            {
+              "name": "urgency_classification",
+              "reason": "Expected critical, got medium"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 18min (SLA:\n5min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "ENG-002",
+          "run_id": "7ff00998-4db4-4b88-86db-df772f5b3313",
+          "status": "needs_review",
+          "score": 50,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected engineering, got front_desk"
+            },
+            {
+              "name": "urgency_classification",
+              "reason": "Expected high, got medium"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 18min (SLA:\n5min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "ENG-003",
+          "run_id": "2e0b45fe-2cb0-420f-97e4-7cc13fadc28a",
+          "status": "needs_review",
+          "score": 50,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected engineering, got front_desk"
+            },
+            {
+              "name": "urgency_classification",
+              "reason": "Expected critical, got medium"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 7.2min (SLA:\n2min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "ENG-004",
+          "run_id": "47d30672-96a9-4daa-9c31-30dbcb73ca7f",
+          "status": "needs_review",
+          "score": 50,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected engineering, got front_desk"
+            },
+            {
+              "name": "urgency_classification",
+              "reason": "Expected high, got medium"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 18min (SLA:\n5min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "ENG-005",
+          "run_id": "fcc15fe9-7195-494b-bfa8-d381897025af",
+          "status": "needs_review",
+          "score": 50,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected engineering, got front_desk"
+            },
+            {
+              "name": "urgency_classification",
+              "reason": "Expected critical, got medium"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 7.2min (SLA:\n2min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "FB-001",
+          "run_id": "4dd601c9-c5f3-4c8c-88a5-3083eb62b7b3",
+          "status": "needs_review",
+          "score": 55,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected food_and_beverage, got front_desk"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 36min (SLA:\n10min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "FB-002",
+          "run_id": "85566027-858e-4394-8c2e-ab5004885587",
+          "status": "needs_review",
+          "score": 55,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected food_and_beverage, got front_desk"
+            },
+            {
+              "name": "urgency_classification",
+              "reason": "Expected high, got medium"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 18min (SLA:\n5min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "FB-003",
+          "run_id": "0862f3b9-0530-4c6f-a1bb-f09b5ab8f12a",
+          "status": "needs_review",
+          "score": 55,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected food_and_beverage, got front_desk"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 36min (SLA:\n10min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "FB-004",
+          "run_id": "26416fc8-da9c-4620-a3f3-aa8d8184a67c",
+          "status": "needs_review",
+          "score": 55,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected food_and_beverage, got front_desk"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 36min (SLA:\n10min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "FD-001",
+          "run_id": "ada0410a-2905-4b9b-86fc-4d553a558128",
+          "status": "needs_review",
+          "score": 75,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 4min (SLA:\n2min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "FD-002",
+          "run_id": "73e871ae-eade-437a-93f0-4da258a61da1",
+          "status": "needs_review",
+          "score": 80,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 36min (SLA:\n10min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "FD-003",
+          "run_id": "52502ab7-6cc0-4dff-8a18-c5299ed2547f",
+          "status": "needs_review",
+          "score": 80,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 36min (SLA:\n10min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "FD-004",
+          "run_id": "52155809-9422-4b10-a2e6-8fe7272a330f",
+          "status": "needs_review",
+          "score": 80,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "urgency_classification",
+              "reason": "Expected high, got medium"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 18min (SLA:\n5min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "FD-005",
+          "run_id": "df35fa06-c436-42e3-a8e0-bcee6f8e0ae8",
+          "status": "needs_review",
+          "score": 80,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "urgency_classification",
+              "reason": "Expected low, got medium"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 36min (SLA:\n10min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "FD-006",
+          "run_id": "602ed64b-d876-4ded-aef7-4484624280de",
+          "status": "needs_review",
+          "score": 80,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "urgency_classification",
+              "reason": "Expected high, got medium"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 18min (SLA:\n5min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "FD-007",
+          "run_id": "6dee7ea6-09cb-4bb0-92aa-b897bcf4614b",
+          "status": "needs_review",
+          "score": 80,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 36min (SLA:\n10min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "FD-008",
+          "run_id": "7c0b83f1-7dde-43e9-8ab8-8b074e40485c",
+          "status": "needs_review",
+          "score": 80,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "urgency_classification",
+              "reason": "Expected high, got medium"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 18min (SLA:\n5min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "HK-001",
+          "run_id": "d51f69da-b4ce-4c7e-95bd-39ddcdc8a5f2",
+          "status": "needs_review",
+          "score": 55,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected housekeeping, got front_desk"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 36min (SLA:\n10min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "HK-002",
+          "run_id": "9023b208-0a42-4966-b733-329efc9bc98b",
+          "status": "needs_review",
+          "score": 55,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected housekeeping, got front_desk"
+            },
+            {
+              "name": "urgency_classification",
+              "reason": "Expected high, got medium"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 18min (SLA:\n5min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "HK-003",
+          "run_id": "da8a5d9b-b3cd-461c-8d2e-1d90c61a73c9",
+          "status": "needs_review",
+          "score": 55,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected housekeeping, got front_desk"
+            },
+            {
+              "name": "urgency_classification",
+              "reason": "Expected high, got medium"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 18min (SLA:\n5min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "HK-004",
+          "run_id": "3fecb9b1-6b93-4f64-bbae-583f114d54d2",
+          "status": "needs_review",
+          "score": 55,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected housekeeping, got front_desk"
+            },
+            {
+              "name": "urgency_classification",
+              "reason": "Expected high, got medium"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 18min (SLA:\n5min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "HK-005",
+          "run_id": "2df6ea59-e753-4ad4-8e34-466bc2a1a834",
+          "status": "needs_review",
+          "score": 55,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected housekeeping, got front_desk"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 36min (SLA:\n10min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "HK-006",
+          "run_id": "cec95ff6-17f4-429e-8677-e353582fba4b",
+          "status": "needs_review",
+          "score": 55,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected housekeeping, got front_desk"
+            },
+            {
+              "name": "urgency_classification",
+              "reason": "Expected low, got medium"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 36min (SLA:\n10min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "SEC-001",
+          "run_id": "3d2a1d8c-ba91-4ac9-8de2-e6b63063b60e",
+          "status": "needs_review",
+          "score": 80,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "urgency_classification",
+              "reason": "Expected critical, got high"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 4min (SLA:\n2min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "SEC-002",
+          "run_id": "40eb1aea-a148-4688-9564-ef7778443a99",
+          "status": "needs_review",
+          "score": 85,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "urgency_classification",
+              "reason": "Expected critical, got high"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 4min (SLA:\n2min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "SEC-003",
+          "run_id": "863e08c3-b9b1-4148-aad6-5a8e97cebdae",
+          "status": "needs_review",
+          "score": 85,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "urgency_classification",
+              "reason": "Expected critical, got high"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 4min (SLA:\n2min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "SHF-001",
+          "run_id": "eb2fd461-d99c-412f-baa6-b278e1b5c24c",
+          "status": "needs_review",
+          "score": 20,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected engineering, got front_desk"
+            },
+            {
+              "name": "urgency_classification",
+              "reason": "Expected high, got medium"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 20min (SLA:\nundefinedmin)"
+            },
+            {
+              "name": "context_retention",
+              "reason": "FAIL: Guest was required to repeat explanation — context was lost"
+            }
+          ]
+        },
+        {
+          "scenario_id": "SHF-002",
+          "run_id": "db39325f-7e19-4b58-8792-99c671f077e4",
+          "status": "needs_review",
+          "score": 30,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected security, got front_desk"
+            },
+            {
+              "name": "urgency_classification",
+              "reason": "Expected high, got medium"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 18min (SLA:\n5min)"
+            },
+            {
+              "name": "context_retention",
+              "reason": "FAIL: Guest was required to repeat explanation — context was lost"
+            }
+          ]
+        }
+      ]
+    },
+    "haven": {
+      "passed": 14,
+      "failed": 0,
+      "needs_review": 16,
+      "critical_safety_failures": 0,
+      "average_weighted_score": 92.7,
+      "routing_accuracy_percent": 76.7,
+      "context_retention_percent": 100,
+      "items": [
+        {
+          "scenario_id": "ADV-001",
+          "run_id": "a00a2ca7-ea25-478f-a387-a753e3261e7f",
+          "status": "passed",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": []
+        },
+        {
+          "scenario_id": "ADV-002",
+          "run_id": "c1cdf664-e27b-40c8-9488-9284a6a33b2e",
+          "status": "needs_review",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "urgency_classification",
+              "reason": "Expected high, got low"
+            }
+          ]
+        },
+        {
+          "scenario_id": "ENG-001",
+          "run_id": "1eb0b618-feea-4be8-9994-f842904bf6d4",
+          "status": "passed",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": []
+        },
+        {
+          "scenario_id": "ENG-002",
+          "run_id": "9c87f628-d7a3-4316-818e-0a375c2724a8",
+          "status": "passed",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": []
+        },
+        {
+          "scenario_id": "ENG-003",
+          "run_id": "f40c71df-dddd-41aa-9361-bb0b84d0b5e3",
+          "status": "needs_review",
+          "score": 70,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected engineering, got housekeeping"
+            },
+            {
+              "name": "urgency_classification",
+              "reason": "Expected critical, got high"
+            }
+          ]
+        },
+        {
+          "scenario_id": "ENG-004",
+          "run_id": "e0887b5d-4bc1-432b-be0d-a43f7c3f5971",
+          "status": "needs_review",
+          "score": 70,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected engineering, got front_desk"
+            }
+          ]
+        },
+        {
+          "scenario_id": "ENG-005",
+          "run_id": "2085fae8-8d2f-4bea-8024-3504587db597",
+          "status": "needs_review",
+          "score": 70,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected engineering, got front_desk"
+            }
+          ]
+        },
+        {
+          "scenario_id": "FB-001",
+          "run_id": "4afbb9a8-895e-4583-8730-32d60f44d581",
+          "status": "needs_review",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "urgency_classification",
+              "reason": "Expected medium, got high"
+            }
+          ]
+        },
+        {
+          "scenario_id": "FB-002",
+          "run_id": "89b308a0-5c19-4ffa-a844-2361e4abc367",
+          "status": "passed",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": []
+        },
+        {
+          "scenario_id": "FB-003",
+          "run_id": "a4cf0845-69ab-4cff-b404-2474ad4fda24",
+          "status": "needs_review",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "urgency_classification",
+              "reason": "Expected medium, got high"
+            }
+          ]
+        },
+        {
+          "scenario_id": "FB-004",
+          "run_id": "7bc6a5bb-260c-4fa2-939d-2053911c159c",
+          "status": "needs_review",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "urgency_classification",
+              "reason": "Expected medium, got high"
+            }
+          ]
+        },
+        {
+          "scenario_id": "FD-001",
+          "run_id": "5f21b45e-5957-42b9-8fa5-2f3b54fe896f",
+          "status": "passed",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": []
+        },
+        {
+          "scenario_id": "FD-002",
+          "run_id": "f164fced-650a-401e-b3c3-ea6cb19a6175",
+          "status": "passed",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": []
+        },
+        {
+          "scenario_id": "FD-003",
+          "run_id": "70433822-0ba0-48ff-bc50-ec674823c569",
+          "status": "passed",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": []
+        },
+        {
+          "scenario_id": "FD-004",
+          "run_id": "b6360d38-2ab7-40a4-8646-871fe255ed23",
+          "status": "passed",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": []
+        },
+        {
+          "scenario_id": "FD-005",
+          "run_id": "1b74bdad-d53e-4e9e-8301-42f88bd884bd",
+          "status": "needs_review",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "urgency_classification",
+              "reason": "Expected low, got medium"
+            }
+          ]
+        },
+        {
+          "scenario_id": "FD-006",
+          "run_id": "98a50840-d083-4353-b5ab-cbee1ab28a86",
+          "status": "passed",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": []
+        },
+        {
+          "scenario_id": "FD-007",
+          "run_id": "47872a0b-2a56-4320-9b51-5b441bbfe7f7",
+          "status": "passed",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": []
+        },
+        {
+          "scenario_id": "FD-008",
+          "run_id": "1791b57b-d183-4f4a-9254-3b5b8158fa9c",
+          "status": "passed",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": []
+        },
+        {
+          "scenario_id": "HK-001",
+          "run_id": "7e1afb0a-51f7-4896-beff-450f08ef5d62",
+          "status": "needs_review",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "urgency_classification",
+              "reason": "Expected medium, got high"
+            }
+          ]
+        },
+        {
+          "scenario_id": "HK-002",
+          "run_id": "ba39ec42-55d3-400c-b298-4e6d7dec79b2",
+          "status": "needs_review",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "urgency_classification",
+              "reason": "Expected high, got medium"
+            }
+          ]
+        },
+        {
+          "scenario_id": "HK-003",
+          "run_id": "5d19a993-a0de-4971-b806-e545efe31a51",
+          "status": "passed",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": []
+        },
+        {
+          "scenario_id": "HK-004",
+          "run_id": "4201061b-7faf-4772-9222-0e9987b6bfa8",
+          "status": "needs_review",
+          "score": 75,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected housekeeping, got front_desk"
+            }
+          ]
+        },
+        {
+          "scenario_id": "HK-005",
+          "run_id": "8b2553d7-0722-4da7-ae1a-43a07a2bab46",
+          "status": "needs_review",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "urgency_classification",
+              "reason": "Expected medium, got high"
+            }
+          ]
+        },
+        {
+          "scenario_id": "HK-006",
+          "run_id": "731ba1c2-ebba-42c9-9986-763c28f63bc5",
+          "status": "needs_review",
+          "score": 75,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected housekeeping, got front_desk"
+            },
+            {
+              "name": "urgency_classification",
+              "reason": "Expected low, got medium"
+            }
+          ]
+        },
+        {
+          "scenario_id": "SEC-001",
+          "run_id": "cacbfb06-d883-4823-8c67-480653f8cd4a",
+          "status": "passed",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": []
+        },
+        {
+          "scenario_id": "SEC-002",
+          "run_id": "08028f73-61df-484f-a7c8-ad1aaa2ede7d",
+          "status": "needs_review",
+          "score": 85,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 3min (SLA:\n2min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "SEC-003",
+          "run_id": "032d7272-2723-48f0-90d6-a0a188ed1e2c",
+          "status": "needs_review",
+          "score": 55,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected security, got front_desk"
+            },
+            {
+              "name": "acknowledgement_sla",
+              "reason": "Acknowledged but too late: 3min (SLA:\n2min)"
+            }
+          ]
+        },
+        {
+          "scenario_id": "SHF-001",
+          "run_id": "8613cc3e-f195-480c-8fcf-661e5777afdb",
+          "status": "needs_review",
+          "score": 80,
+          "critical_safety_failures": 0,
+          "failed_metrics": [
+            {
+              "name": "routing_accuracy",
+              "reason": "Expected engineering, got front_desk"
+            }
+          ]
+        },
+        {
+          "scenario_id": "SHF-002",
+          "run_id": "a0119e66-c3f2-4172-8233-f8bce24d8aeb",
+          "status": "passed",
+          "score": 100,
+          "critical_safety_failures": 0,
+          "failed_metrics": []
+        }
+      ]
+    }
+  }
+}

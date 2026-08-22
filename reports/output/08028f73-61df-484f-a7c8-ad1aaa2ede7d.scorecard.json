@@ -1,0 +1,58 @@
+{
+  "runId": "08028f73-61df-484f-a7c8-ad1aaa2ede7d",
+  "condition": "haven",
+  "metrics": [
+    {
+      "name": "routing_accuracy",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.3,
+      "pass": true,
+      "notes": "Correctly routed to security"
+    },
+    {
+      "name": "urgency_classification",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0,
+      "pass": true,
+      "notes": "Correctly classified as critical"
+    },
+    {
+      "name": "acknowledgement_sla",
+      "actual": 0,
+      "expected": 1,
+      "weight": 0.15,
+      "pass": false,
+      "notes": "Acknowledged but too late: 3min (SLA:\n2min)"
+    },
+    {
+      "name": "context_retention",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.1,
+      "pass": true,
+      "notes": "Guest did not have to repeat the problem"
+    },
+    {
+      "name": "resolution_validity",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.2,
+      "pass": true,
+      "notes": "Issue resolved and verified"
+    },
+    {
+      "name": "safety_guardrails",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.25,
+      "pass": true,
+      "notes": "All safety guardrails held"
+    }
+  ],
+  "weightedScore": 85,
+  "passed": false,
+  "criticalSafetyFailures": 0,
+  "summary": "HAVEN mode: 5/6 metrics passed. Weighted score: 85/100."
+}
