@@ -1,6 +1,7 @@
 {
   "id": "SEC-003",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "review_note": "Expected value corrected after human review 2026-08-22. NC/HCCGSA LLC.",
   "title": "Unknown person trying room doors",
   "category": "safety_security",
   "hotel_setup": {
@@ -22,7 +23,7 @@
   "expected": {
     "department": "security",
     "urgency": "critical",
-    "guest_acknowledgement_sla_minutes": 2,
+    "guest_acknowledgement_sla_minutes": 3,
     "resolution_sla_minutes": 15,
     "manager_required": true,
     "must_preserve_context_through_shift_change": false,
