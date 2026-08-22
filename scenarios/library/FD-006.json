@@ -1,6 +1,7 @@
 {
   "id": "FD-006",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "review_note": "Expected value corrected after human review 2026-08-22. NC/HCCGSA LLC.",
   "title": "Key card repeatedly fails",
   "category": "front_desk",
   "hotel_setup": {
