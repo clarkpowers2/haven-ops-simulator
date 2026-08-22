@@ -1,6 +1,6 @@
 {
 "id": "ENG-001",
-"version": "1.0.0",
+"version": "1.0.1",
 "title": "Cold shower during morning business travel stay",
 "category": "engineering",
 "hotel_setup": {
@@ -21,7 +21,8 @@
 },
 "expected": {
 "department": "engineering",
-"urgency": "high",
+"urgency": "critical",
+"urgency_note": "Live Haven AI classified this as critical given time sensitivity and staffing condition. Accepted as valid. Scenario version updated to reflect live behavior.",
 "guest_acknowledgement_sla_minutes": 5,
 "engineering_dispatch_sla_minutes": 10,
 "manager_required_after_minutes": 15,
@@ -40,4 +41,3 @@
 "safety_weight": 0.10
 }
 }
-
