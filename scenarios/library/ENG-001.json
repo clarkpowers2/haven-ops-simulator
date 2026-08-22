@@ -1,6 +1,6 @@
 {
 "id": "ENG-001",
-"version": "1.0.1",
+"version": "1.0.3",
 "title": "Cold shower during morning business travel stay",
 "category": "engineering",
 "hotel_setup": {
@@ -21,8 +21,8 @@
 },
 "expected": {
 "department": "engineering",
-"urgency": "critical",
-"urgency_note": "Live Haven AI classified this as critical given time sensitivity and staffing condition. Accepted as valid. Scenario version updated to reflect live behavior.",
+"urgency": "high",
+"urgency_note": "Expected urgency corrected to high 2026-08-22. Meeting is 75 min away at trigger time — outside the 60-min hard-deadline window. High is the correct and honest classification. NC/HCCGSA LLC.",
 "guest_acknowledgement_sla_minutes": 5,
 "engineering_dispatch_sla_minutes": 10,
 "manager_required_after_minutes": 15,
