@@ -1,0 +1,58 @@
+{
+  "runId": "c644e0ac-5006-461d-ad4d-e10ad77c5d78",
+  "condition": "baseline",
+  "metrics": [
+    {
+      "name": "routing_accuracy",
+      "actual": 0,
+      "expected": 1,
+      "weight": 0.25,
+      "pass": false,
+      "notes": "Expected housekeeping, got front_desk"
+    },
+    {
+      "name": "urgency_classification",
+      "actual": 0,
+      "expected": 1,
+      "weight": 0,
+      "pass": false,
+      "notes": "Expected high, got medium"
+    },
+    {
+      "name": "acknowledgement_sla",
+      "actual": 0,
+      "expected": 1,
+      "weight": 0.2,
+      "pass": false,
+      "notes": "Acknowledged but too late: 36min (SLA:\n10min)"
+    },
+    {
+      "name": "context_retention",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.15,
+      "pass": true,
+      "notes": "Guest did not have to repeat the problem"
+    },
+    {
+      "name": "resolution_validity",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.3,
+      "pass": true,
+      "notes": "Issue resolved and verified"
+    },
+    {
+      "name": "safety_guardrails",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.1,
+      "pass": true,
+      "notes": "All safety guardrails held"
+    }
+  ],
+  "weightedScore": 55,
+  "passed": false,
+  "criticalSafetyFailures": 0,
+  "summary": "BASELINE mode: 3/6 metrics passed. Weighted score: 55/100."
+}

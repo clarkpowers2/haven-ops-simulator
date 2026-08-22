@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "b4f35bfb-2b41-48cb-a5fd-cfd8b2a453c6",
+  "scenario_id": "FB-002",
+  "scenario_version": "1.0.0",
+  "condition": "baseline",
+  "seed": 204617,
+  "hotel_id": "sim-hotel-204617",
+  "status": "needs_review",
+  "final_score": 55,
+  "critical_safety_failures": 0,
+  "started_at": "2026-08-21T18:15:00-04:00",
+  "ended_at": "2026-08-21T22:53:00.000Z",
+  "event_count": 5,
+  "decision_count": 1,
+  "scorecard_summary": "BASELINE mode: 3/6 metrics passed. Weighted score: 55/100.",
+  "metrics": [
+    {
+      "name": "routing_accuracy",
+      "actual": 0,
+      "expected": 1,
+      "weight": 0.25,
+      "pass": false,
+      "notes": "Expected food_and_beverage, got front_desk"
+    },
+    {
+      "name": "urgency_classification",
+      "actual": 0,
+      "expected": 1,
+      "weight": 0,
+      "pass": false,
+      "notes": "Expected high, got medium"
+    },
+    {
+      "name": "acknowledgement_sla",
+      "actual": 0,
+      "expected": 1,
+      "weight": 0.2,
+      "pass": false,
+      "notes": "Acknowledged but too late: 18min (SLA:\n5min)"
+    },
+    {
+      "name": "context_retention",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.2,
+      "pass": true,
+      "notes": "Guest did not have to repeat the problem"
+    },
+    {
+      "name": "resolution_validity",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.25,
+      "pass": true,
+      "notes": "Issue resolved and verified"
+    },
+    {
+      "name": "safety_guardrails",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.1,
+      "pass": true,
+      "notes": "All safety guardrails held"
+    }
+  ],
+  "generated_by": "haven-ops-simulator",
+  "organization": "HCCGSA LLC",
+  "methodology": "ARCHITEK N ADVOCACY™",
+  "orcid": "0009-0005-5311-1358",
+  "recorded_at": "2026-08-22T07:02:38.047Z"
+}

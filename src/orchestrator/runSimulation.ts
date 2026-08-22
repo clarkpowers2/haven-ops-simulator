@@ -12,6 +12,23 @@ interface IntakeResult extends Record<string, unknown> {
   urgency: string
   resolution_verified: boolean
   latency_ms: number
+  issue_id?: string
+  correlation_id?: string
+  synthetic?: true
+  persistence?: {
+    issue_written: boolean
+    memory_graph_indexed: boolean
+    shift_handoff_generated: boolean
+    pattern_alerts_fired: number
+  }
+}
+
+interface WriteVerification {
+  issueWritten: boolean
+  memoryGraphIndexed: boolean
+  shiftHandoffGenerated: boolean
+  patternAlertsObserved: number
+  resolutionPersisted: boolean
 }
 
 export async function runSimulation(scenario: SimScenario, config: RunConfig): Promise<RunResult> {
@@ -60,6 +77,16 @@ export async function runSimulation(scenario: SimScenario, config: RunConfig): P
   const intakeResult = config.condition === 'haven'
     ? await callHavenTestIntake(triggerPayload)
     : baselineIntake(scenario)
+  const writeVerification: WriteVerification = config.condition === 'haven'
+    ? await verifyOperationalWrite(triggerPayload, intakeResult)
+    : { issueWritten: false, memoryGraphIndexed: false, shiftHandoffGenerated: false, patternAlertsObserved: 0, resolutionPersisted: false }
+
+  if (config.condition === 'haven' && intakeResult.issue_id) {
+    events.push({
+      id: crypto.randomUUID(), runId, sequence: 3, eventType: 'issue_created', actor: 'system',
+      simulatedAt: clock.nowIso(), payloadJson: { issueId: intakeResult.issue_id, ...writeVerification },
+    })
+  }
 
   decisions.push({
     id: crypto.randomUUID(), runId, correlationId: triggerPayload.correlation_id,
@@ -68,7 +95,7 @@ export async function runSimulation(scenario: SimScenario, config: RunConfig): P
     simulatedAt: clock.nowIso(),
   })
   events.push({
-    id: crypto.randomUUID(), runId, sequence: 3,
+    id: crypto.randomUUID(), runId, sequence: config.condition === 'haven' ? 4 : 3,
     eventType: config.condition === 'haven' ? 'ai_analysis_completed' : 'route_recommended',
     actor: config.condition === 'haven' ? 'ai' : 'system',
     simulatedAt: clock.nowIso(), payloadJson: intakeResult,
@@ -103,12 +130,21 @@ export async function runSimulation(scenario: SimScenario, config: RunConfig): P
       id: crypto.randomUUID(), runId, sequence: 5, eventType: 'work_completed', actor: 'staff',
       simulatedAt: clock.nowIso(), payloadJson: { verifiedByStaff: resolutionVerifiedByStaff },
     })
+    if (config.condition === 'haven' && intakeResult.issue_id) {
+      writeVerification.resolutionPersisted = await resolveAndVerify(triggerPayload, intakeResult.issue_id)
+    }
   }
 
   const scorecard = scoreRun({
     scenario, condition: config.condition, events, decisions, intakeResult, staffAcknowledged,
     resolved, resolutionVerifiedByStaff, minutesToAcknowledge, guestFinalState: guest.state,
     guestRepeatedExplanation: guest.didRepeatExplanation,
+    endToEndWriteVerified: config.condition === 'haven'
+      ? writeVerification.issueWritten
+        && writeVerification.memoryGraphIndexed
+        && writeVerification.shiftHandoffGenerated
+        && (!resolved || writeVerification.resolutionPersisted)
+      : null,
   })
   scorecard.runId = runId
   const runResult: RunResult = {
@@ -120,6 +156,54 @@ export async function runSimulation(scenario: SimScenario, config: RunConfig): P
   }
   await writeAuditRecord(runResult)
   return runResult
+}
+
+function havenBaseUrl(): string {
+  const url = process.env.HAVEN_TEST_INTAKE_URL
+  if (!url) throw new Error('[SIMULATOR] HAVEN_TEST_INTAKE_URL is not set')
+  return url.replace(/\/$/, '')
+}
+
+function simulationHeaders(): Record<string, string> {
+  const token = process.env.HAVEN_SIMULATION_TOKEN
+  if (!token) throw new Error('[SIMULATOR] HAVEN_SIMULATION_TOKEN is not set')
+  return { Authorization: `Bearer ${token}`, 'X-Haven-Environment': 'simulation' }
+}
+
+async function verifyOperationalWrite(payload: Record<string, unknown>, intake: IntakeResult): Promise<WriteVerification> {
+  assertSimulationEnvironment(payload as { synthetic: boolean })
+  const response = await fetch(`${havenBaseUrl()}/api/simulation/state?run_id=${encodeURIComponent(String(payload.simulation_run_id))}`, {
+    headers: simulationHeaders(),
+    signal: AbortSignal.timeout(15_000),
+  })
+  if (!response.ok) throw new Error(`[SIMULATOR] Staging read-back API error ${response.status}`)
+  const state = await response.json() as {
+    issues?: Array<{ id: string; correlation_id: string }>
+    memory?: Array<{ issue_id: string }>
+    alerts?: unknown[]
+    handoffs?: Array<{ issue_id: string }>
+  }
+  const issue = state.issues?.find(item => item.correlation_id === payload.correlation_id && item.id === intake.issue_id)
+  return {
+    issueWritten: Boolean(issue),
+    memoryGraphIndexed: Boolean(issue && state.memory?.some(item => item.issue_id === issue.id)),
+    shiftHandoffGenerated: Boolean(issue && state.handoffs?.some(item => item.issue_id === issue.id)),
+    patternAlertsObserved: state.alerts?.length || 0,
+    resolutionPersisted: false,
+  }
+}
+
+async function resolveAndVerify(payload: Record<string, unknown>, issueId: string): Promise<boolean> {
+  assertSimulationEnvironment(payload as { synthetic: boolean })
+  const response = await fetch(`${havenBaseUrl()}/api/simulation/resolve`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...simulationHeaders() },
+    body: JSON.stringify({ issue_id: issueId, resolution_summary: 'Verified synthetic work completion', synthetic: true }),
+    signal: AbortSignal.timeout(15_000),
+  })
+  if (!response.ok) throw new Error(`[SIMULATOR] Staging resolution API error ${response.status}`)
+  const result = await response.json() as { status?: string; resolution_verified?: boolean; memory_graph_updated?: boolean }
+  return result.status === 'resolved' && result.resolution_verified === true && result.memory_graph_updated === true
 }
 
 async function callHavenTestIntake(payload: Record<string, unknown>): Promise<IntakeResult> {

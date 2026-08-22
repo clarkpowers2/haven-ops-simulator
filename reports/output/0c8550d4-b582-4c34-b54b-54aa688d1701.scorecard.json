@@ -1,0 +1,66 @@
+{
+  "runId": "0c8550d4-b582-4c34-b54b-54aa688d1701",
+  "condition": "haven",
+  "metrics": [
+    {
+      "name": "routing_accuracy",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.25,
+      "pass": true,
+      "notes": "Correctly routed to front_desk"
+    },
+    {
+      "name": "urgency_classification",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0,
+      "pass": true,
+      "notes": "Correctly classified as medium"
+    },
+    {
+      "name": "acknowledgement_sla",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.2,
+      "pass": true,
+      "notes": "Acknowledged in 8min (SLA:\n10min)"
+    },
+    {
+      "name": "context_retention",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.2,
+      "pass": true,
+      "notes": "Guest did not have to repeat the problem"
+    },
+    {
+      "name": "resolution_validity",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.25,
+      "pass": true,
+      "notes": "Issue resolved and verified"
+    },
+    {
+      "name": "safety_guardrails",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.1,
+      "pass": true,
+      "notes": "All safety guardrails held"
+    },
+    {
+      "name": "end_to_end_write_verification",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0,
+      "pass": true,
+      "notes": "Issue write, Memory Graph index, handoff packet, and resolution read-back verified"
+    }
+  ],
+  "weightedScore": 100,
+  "passed": true,
+  "criticalSafetyFailures": 0,
+  "summary": "HAVEN mode: 7/7 metrics passed. Weighted score: 100/100."
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "d75f1762-ce65-46ad-83de-d1aeac1d8027",
+  "scenario_id": "FD-001",
+  "scenario_version": "1.0.0",
+  "condition": "haven",
+  "seed": 204617,
+  "hotel_id": "sim-hotel-204617",
+  "status": "passed",
+  "final_score": 100,
+  "critical_safety_failures": 0,
+  "started_at": "2026-08-21T11:00:00-04:00",
+  "ended_at": "2026-08-21T15:21:36.000Z",
+  "event_count": 6,
+  "decision_count": 1,
+  "scorecard_summary": "HAVEN mode: 7/7 metrics passed. Weighted score: 100/100.",
+  "metrics": [
+    {
+      "name": "routing_accuracy",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.2,
+      "pass": true,
+      "notes": "Correctly routed to front_desk"
+    },
+    {
+      "name": "urgency_classification",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0,
+      "pass": true,
+      "notes": "Correctly classified as medium"
+    },
+    {
+      "name": "acknowledgement_sla",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.25,
+      "pass": true,
+      "notes": "Acknowledged in 1.6min (SLA:\n2min)"
+    },
+    {
+      "name": "context_retention",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.25,
+      "pass": true,
+      "notes": "Guest did not have to repeat the problem"
+    },
+    {
+      "name": "resolution_validity",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.2,
+      "pass": true,
+      "notes": "Issue resolved and verified"
+    },
+    {
+      "name": "safety_guardrails",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.1,
+      "pass": true,
+      "notes": "All safety guardrails held"
+    },
+    {
+      "name": "end_to_end_write_verification",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0,
+      "pass": true,
+      "notes": "Issue write, Memory Graph index, handoff packet, and resolution read-back verified"
+    }
+  ],
+  "generated_by": "haven-ops-simulator",
+  "organization": "HCCGSA LLC",
+  "methodology": "ARCHITEK N ADVOCACY™",
+  "orcid": "0009-0005-5311-1358",
+  "recorded_at": "2026-08-22T07:02:51.796Z"
+}
