@@ -1,6 +1,6 @@
 {
   "id": "ENG-004",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "title": "Repeated Wi-Fi outage",
   "category": "engineering",
   "hotel_setup": {
@@ -21,8 +21,8 @@
   },
   "expected": {
     "department": "engineering",
-    "urgency": "critical",
-    "urgency_note": "Live Haven AI classification accepted after human review 2026-08-22. NC/HCCGSA LLC.",
+    "urgency": "high",
+    "urgency_note": "Human review revised 2026-08-22. critical was incorrect for Wi-Fi failure. high is the correct classification. Repeat escalation rule is sufficient. NC/HCCGSA LLC.",
     "guest_acknowledgement_sla_minutes": 5,
     "resolution_sla_minutes": 30,
     "manager_required": false,
