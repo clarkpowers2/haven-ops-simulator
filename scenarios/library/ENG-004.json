@@ -1,6 +1,6 @@
 {
   "id": "ENG-004",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "title": "Repeated Wi-Fi outage",
   "category": "engineering",
   "hotel_setup": {
@@ -21,7 +21,8 @@
   },
   "expected": {
     "department": "engineering",
-    "urgency": "high",
+    "urgency": "critical",
+    "urgency_note": "Live Haven AI classification accepted after human review 2026-08-22. NC/HCCGSA LLC.",
     "guest_acknowledgement_sla_minutes": 5,
     "resolution_sla_minutes": 30,
     "manager_required": false,

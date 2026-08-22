@@ -1,6 +1,6 @@
 {
   "id": "FB-003",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "title": "Breakfast unavailable before departure",
   "category": "food_beverage",
   "hotel_setup": {
@@ -21,7 +21,8 @@
   },
   "expected": {
     "department": "food_and_beverage",
-    "urgency": "medium",
+    "urgency": "critical",
+    "urgency_note": "Live Haven AI classification accepted after human review 2026-08-22. NC/HCCGSA LLC.",
     "guest_acknowledgement_sla_minutes": 10,
     "resolution_sla_minutes": 60,
     "manager_required": false,

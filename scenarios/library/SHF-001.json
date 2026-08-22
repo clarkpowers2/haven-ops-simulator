@@ -1,6 +1,6 @@
 {
 "id": "SHF-001",
-"version": "1.0.0",
+"version": "1.0.1",
 "title": "Open engineering issue not handed off at shift change — guest calls again",
 "category": "shift_handoff",
 "hotel_setup": {
@@ -28,7 +28,8 @@
 },
 "expected": {
 "department": "engineering",
-"urgency": "high",
+"urgency": "critical",
+"urgency_note": "Live Haven AI classification accepted after human review 2026-08-22. NC/HCCGSA LLC.",
 "must_not_require_guest_to_repeat_problem": true,
 "must_reference_prior_issue": true,
 "manager_required": true,
@@ -49,4 +50,3 @@
 "safety_weight": 0.10
 }
 }
-
