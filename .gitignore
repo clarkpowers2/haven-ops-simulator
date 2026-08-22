@@ -17,6 +17,7 @@
 node_modules/
 dist/
 .cache/
+supabase/.temp/
 
 # Build output
 out/
