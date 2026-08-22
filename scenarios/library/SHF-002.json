@@ -1,6 +1,7 @@
 {
   "id": "SHF-002",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "routing_note": "Expected department corrected to engineering 2026-08-22. Loud equipment vibration is a maintenance issue. Security was an authoring error. NC/HCCGSA LLC.",
   "title": "Unresolved noise issue crosses shift",
   "category": "shift_handoff",
   "hotel_setup": {
@@ -20,7 +21,7 @@
     "simulated_hour": "18:15"
   },
   "expected": {
-    "department": "security",
+    "department": "engineering",
     "urgency": "high",
     "guest_acknowledgement_sla_minutes": 5,
     "resolution_sla_minutes": 30,
