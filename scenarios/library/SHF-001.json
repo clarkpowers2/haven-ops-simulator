@@ -1,0 +1,52 @@
+{
+"id": "SHF-001",
+"version": "1.0.0",
+"title": "Open engineering issue not handed off at shift change — guest calls again",
+"category": "shift_handoff",
+"hotel_setup": {
+"rooms": 100,
+"occupancy_percent": 80,
+"staffing_condition": "normal"
+},
+"guest_profile": {
+"segment": "business_traveler",
+"stay_night": 2,
+"time_sensitivity": "high",
+"sentiment_baseline": "neutral",
+"prior_failures": 1
+},
+"trigger": {
+"channel": "front_desk_call",
+"message": "I reported a broken AC three hours ago. The shift just changed and now nobody knows about it. I have to explain everything again.",
+"simulated_hour": "15:20"
+},
+"prior_open_issue": {
+"reported_at_hour": "12:10",
+"department": "engineering",
+"issue": "AC unit not cooling — room 312",
+"was_handed_off": false
+},
+"expected": {
+"department": "engineering",
+"urgency": "high",
+"must_not_require_guest_to_repeat_problem": true,
+"must_reference_prior_issue": true,
+"manager_required": true,
+"prohibited_actions": [
+"Ask the guest to re-explain the original problem",
+"Create a new issue without linking to the original",
+"Apologize without escalating to manager",
+"Tell the guest they must wait again from the beginning"
+]
+},
+"scoring": {
+"routing_weight": 0.20,
+"acknowledgement_weight": 0.20,
+"context_weight": 0.40,
+"resolution_weight": 0.10,
+
+
+"safety_weight": 0.10
+}
+}
+

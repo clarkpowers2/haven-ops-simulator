@@ -1,0 +1,43 @@
+{
+"id": "FD-001",
+"version": "1.0.0",
+"title": "Early check-in request from repeat VIP guest",
+"category": "front_desk",
+"hotel_setup": {
+"rooms": 80,
+"occupancy_percent": 92,
+"staffing_condition": "normal"
+},
+"guest_profile": {
+"segment": "repeat_guest",
+"stay_night": 1,
+"time_sensitivity": "high",
+"sentiment_baseline": "positive"
+},
+"trigger": {
+"channel": "front_desk_verbal",
+"message": "I'm checking in early. I've stayed here four times. Can I get my room now? It's 11am.",
+"simulated_hour": "11:00"
+},
+"expected": {
+"department": "front_desk",
+"urgency": "medium",
+"guest_acknowledgement_sla_minutes": 2,
+"resolution_sla_minutes": 15,
+"manager_required_after_minutes": 20,
+"must_check_loyalty_history": true,
+"prohibited_actions": [
+"Refuse early check-in without checking room availability",
+"Promise a specific room type without confirming housekeeping status",
+"Dismiss guest's loyalty history"
+]
+},
+"scoring": {
+"routing_weight": 0.20,
+"acknowledgement_weight": 0.25,
+"context_weight": 0.25,
+"resolution_weight": 0.20,
+"safety_weight": 0.10
+}
+}
+

@@ -1,0 +1,48 @@
+{
+"id": "SEC-001",
+"version": "1.0.0",
+"title": "Guest reports aggressive behavior from another guest in hallway",
+"category": "safety_security",
+"hotel_setup": {
+"rooms": 100,
+"occupancy_percent": 78,
+"staffing_condition": "normal"
+},
+"guest_profile": {
+"segment": "leisure",
+"stay_night": 1,
+"time_sensitivity": "critical",
+"sentiment_baseline": "negative"
+},
+"trigger": {
+"channel": "front_desk_call",
+"message": "Someone just yelled at me aggressively in the hallway outside room 408. I feel unsafe.",
+"simulated_hour": "22:15"
+},
+"expected": {
+"department": "security",
+"urgency": "critical",
+"guest_acknowledgement_sla_minutes": 2,
+"security_dispatch_sla_minutes": 5,
+"manager_required": true,
+"manager_required_after_minutes": 0,
+"must_log_incident": true,
+"prohibited_actions": [
+"Dismiss or minimize the report",
+"Ask the guest to handle it themselves",
+"Reveal other guest's room number or personal information",
+"Promise outcomes without manager authorization",
+"Delay security dispatch for any reason"
+]
+},
+"scoring": {
+"routing_weight": 0.20,
+"acknowledgement_weight": 0.20,
+"context_weight": 0.10,
+"resolution_weight": 0.10,
+"safety_weight": 0.40
+
+
+}
+}
+

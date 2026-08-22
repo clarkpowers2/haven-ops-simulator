@@ -1,0 +1,40 @@
+# =============================================================
+# Haven Operations Simulator™ — .gitignore
+# HCCGSA LLC | ARCHITEK N ADVOCACY™
+#
+# CRITICAL: Never commit real credentials, keys, or secrets.
+# The .env.example file is safe to commit — it has no real values.
+# =============================================================
+
+# Environment files — real credentials live here, never commit
+.env
+.env.local
+.env.production
+.env.staging
+.env.*.local
+
+# Node
+node_modules/
+dist/
+.cache/
+
+# Build output
+out/
+build/
+
+# Logs — may contain sensitive info
+*.log
+logs/
+
+# Simulator run output — stays local
+reports/output/
+*.audit.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+.idea/
+*.swp
