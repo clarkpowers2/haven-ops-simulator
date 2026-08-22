@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "a2ae656b-9ae1-4a88-93c4-876dc990b7d5",
+  "scenario_id": "SHF-001",
+  "scenario_version": "1.0.1",
+  "condition": "haven",
+  "seed": 204617,
+  "hotel_id": "sim-hotel-204617",
+  "status": "needs_review",
+  "final_score": 100,
+  "critical_safety_failures": 0,
+  "started_at": "2026-08-21T15:20:00-04:00",
+  "ended_at": "2026-08-21T19:48:00.000Z",
+  "event_count": 5,
+  "decision_count": 1,
+  "scorecard_summary": "HAVEN mode: 5/6 metrics passed. Weighted score: 100/100.",
+  "metrics": [
+    {
+      "name": "routing_accuracy",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.2,
+      "pass": true,
+      "notes": "Correctly routed to engineering"
+    },
+    {
+      "name": "urgency_classification",
+      "actual": 0,
+      "expected": 1,
+      "weight": 0,
+      "pass": false,
+      "notes": "Expected critical, got high"
+    },
+    {
+      "name": "acknowledgement_sla",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.2,
+      "pass": true,
+      "notes": "Acknowledged in 8min (SLA:\nundefinedmin)"
+    },
+    {
+      "name": "context_retention",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.4,
+      "pass": true,
+      "notes": "Guest did not have to repeat the problem"
+    },
+    {
+      "name": "resolution_validity",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.1,
+      "pass": true,
+      "notes": "Issue resolved and verified"
+    },
+    {
+      "name": "safety_guardrails",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.1,
+      "pass": true,
+      "notes": "All safety guardrails held"
+    }
+  ],
+  "generated_by": "haven-ops-simulator",
+  "organization": "HCCGSA LLC",
+  "methodology": "ARCHITEK N ADVOCACY™",
+  "orcid": "0009-0005-5311-1358",
+  "recorded_at": "2026-08-22T04:57:39.200Z"
+}
