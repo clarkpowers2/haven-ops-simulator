@@ -1,0 +1,58 @@
+{
+  "runId": "da9ad071-315e-45d8-8389-76869357eaf8",
+  "condition": "haven",
+  "metrics": [
+    {
+      "name": "routing_accuracy",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.25,
+      "pass": true,
+      "notes": "Correctly routed to food_and_beverage"
+    },
+    {
+      "name": "urgency_classification",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0,
+      "pass": true,
+      "notes": "Correctly classified as critical"
+    },
+    {
+      "name": "acknowledgement_sla",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.2,
+      "pass": true,
+      "notes": "Acknowledged in 8min (SLA:\n10min)"
+    },
+    {
+      "name": "context_retention",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.2,
+      "pass": true,
+      "notes": "Guest did not have to repeat the problem"
+    },
+    {
+      "name": "resolution_validity",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.25,
+      "pass": true,
+      "notes": "Issue resolved and verified"
+    },
+    {
+      "name": "safety_guardrails",
+      "actual": 1,
+      "expected": 1,
+      "weight": 0.1,
+      "pass": true,
+      "notes": "All safety guardrails held"
+    }
+  ],
+  "weightedScore": 100,
+  "passed": true,
+  "criticalSafetyFailures": 0,
+  "summary": "HAVEN mode: 6/6 metrics passed. Weighted score: 100/100."
+}
